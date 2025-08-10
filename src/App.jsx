@@ -10,6 +10,7 @@ import { Toaster } from "react-hot-toast";
 import GlobalStyles from "./styles/GlobalStyles.js";
 import Dashboard from "./pages/Dashboard.jsx";
 import Bookings from "./pages/Bookings.jsx";
+import Booking from "./pages/Booking.jsx";
 import Cabins from "./pages/Cabins.jsx";
 import Users from "./pages/Users.jsx";
 import Settings from "./pages/Settings.jsx";
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "bookings",
         element: <Bookings />,
+      },
+      {
+        path: "bookings/:bookingId",
+        element: <Booking />,
       },
       {
         path: "cabins",
