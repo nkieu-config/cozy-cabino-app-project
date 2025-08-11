@@ -17,6 +17,7 @@ import Settings from "./pages/Settings.jsx";
 import Account from "./pages/Account.jsx";
 import Login from "./pages/Login.jsx";
 import PageNotFound from "./pages/PageNotFound.jsx";
+import Checkin from "./pages/Checkin.jsx";
 import AppLayout from "./ui/AppLayout.jsx";
 
 const queryClient = new QueryClient({
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: "bookings/:bookingId",
         element: <Booking />,
+      },
+      {
+        path: "checkin/:bookingId",
+        element: <Checkin />,
       },
       {
         path: "cabins",
