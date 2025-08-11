@@ -8,6 +8,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Toaster } from "react-hot-toast";
 
 import GlobalStyles from "./styles/GlobalStyles.js";
+import ProtectedRoute from "./ui/ProtectedRoute.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import Bookings from "./pages/Bookings.jsx";
 import Booking from "./pages/Booking.jsx";
@@ -30,44 +31,49 @@ const queryClient = new QueryClient({
 
 const router = createBrowserRouter([
   {
-    element: <AppLayout />,
-    errorElement: <PageNotFound />,
+    element: <ProtectedRoute />,
     children: [
       {
-        index: true,
-        element: <Navigate replace to="dashboard" />,
-      },
-      {
-        path: "dashboard",
-        element: <Dashboard />,
-      },
-      {
-        path: "bookings",
-        element: <Bookings />,
-      },
-      {
-        path: "bookings/:bookingId",
-        element: <Booking />,
-      },
-      {
-        path: "checkin/:bookingId",
-        element: <Checkin />,
-      },
-      {
-        path: "cabins",
-        element: <Cabins />,
-      },
-      {
-        path: "users",
-        element: <Users />,
-      },
-      {
-        path: "settings",
-        element: <Settings />,
-      },
-      {
-        path: "account",
-        element: <Account />,
+        element: <AppLayout />,
+        errorElement: <PageNotFound />,
+        children: [
+          {
+            index: true,
+            element: <Navigate replace to="dashboard" />,
+          },
+          {
+            path: "dashboard",
+            element: <Dashboard />,
+          },
+          {
+            path: "bookings",
+            element: <Bookings />,
+          },
+          {
+            path: "bookings/:bookingId",
+            element: <Booking />,
+          },
+          {
+            path: "checkin/:bookingId",
+            element: <Checkin />,
+          },
+          {
+            path: "cabins",
+            element: <Cabins />,
+          },
+          {
+            path: "users",
+            element: <Users />,
+          },
+          {
+            path: "settings",
+            element: <Settings />,
+          },
+          {
+            path: "account",
+            element: <Account />,
+          },
+        ],
       },
     ],
   },
