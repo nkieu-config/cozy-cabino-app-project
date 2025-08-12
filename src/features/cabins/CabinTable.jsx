@@ -4,6 +4,7 @@ import Spinner from "../../ui/Spinner";
 import Table from "../../ui/Table";
 import Menus from "../../ui/Menus";
 import CabinRow from "./CabinRow";
+import Empty from "../../ui/Empty";
 
 function CabinTable() {
   const { isPending, cabins } = useCabins();
