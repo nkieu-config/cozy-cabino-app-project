@@ -8,7 +8,7 @@ import DarkModeToggle from "./DarkModeToggle";
 
 const StyledHeaderMenu = styled.ul`
   display: flex;
-  gap: 0.4rem;
+  gap: 1.2rem;
 `;
 
 function HeaderMenu() {
@@ -17,13 +17,13 @@ function HeaderMenu() {
   return (
     <StyledHeaderMenu>
       <li>
-        <ButtonIcon onClick={() => navigate("/account")}>
-          <HiOutlineUser />
-        </ButtonIcon>
+        <DarkModeToggle />
       </li>
 
       <li>
-        <DarkModeToggle />
+        <ButtonIcon onClick={() => navigate("/account")}>
+          <HiOutlineUser />
+        </ButtonIcon>
       </li>
 
       <li>
